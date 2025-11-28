@@ -1,0 +1,41 @@
+# Common configuration for all services
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: false
+
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.healthcare.immunization: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+

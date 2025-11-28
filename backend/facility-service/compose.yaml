@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=facility_db'
+      - 'POSTGRES_PASSWORD=facility_user'
+      - 'POSTGRES_USER=facility_pass'
+    ports:
+      - '5432'

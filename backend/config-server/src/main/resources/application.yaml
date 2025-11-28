@@ -1,0 +1,98 @@
+server:
+  port: 8888
+  compression:
+    enabled: true
+
+spring:
+  application:
+    name: config-server
+
+  # Cloud Config Server configuration
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - classpath:/config
+            - file:./config
+
+        # Health monitoring
+        health:
+          enabled: true
+
+        # Override system properties
+        override-system-properties: true
+        override-none: false
+
+    # Disable service discovery by default (can be enabled via env)
+    discovery:
+      enabled: ${SPRING_CLOUD_DISCOVERY_ENABLED:false}
+
+
+  # Profile-specific configuration
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:native}
+
+# Eureka client configuration
+eureka:
+  client:
+    # Completely disable Eureka client by default to avoid background refresh errors
+    enabled: ${EUREKA_CLIENT_ENABLED:false}
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8762/eureka/}
+    fetch-registry: ${EUREKA_FETCH_REGISTRY:false}
+    register-with-eureka: ${EUREKA_REGISTER_WITH_EUREKA:false}
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    metadata-map:
+      version: ${spring.application.version:1.0.0}
+      environment: ${SPRING_PROFILES_ACTIVE:native}
+
+# Management and monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,env,refresh,configprops
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    env:
+      show-values: when-authorized
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.healthcare.immunization: DEBUG
+    org.springframework.cloud.config: DEBUG
+    org.springframework.security: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Info endpoint
+info:
+  app:
+    name: ${spring.application.name}
+    description: Centralized Configuration Server
+    version: 1.0.0
+    encoding: ${project.build.sourceEncoding:UTF-8}
+    java:
+      version: ${java.version}

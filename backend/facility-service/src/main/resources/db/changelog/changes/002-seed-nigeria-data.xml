@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="002-seed-nigeria-states" author="system">
+        <!-- Nigerian States -->
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Lagos State"/>
+            <column name="code" value="NG-LA"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Alausa, Ikeja, Lagos"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Kano State"/>
+            <column name="code" value="NG-KN"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Kano State Government House, Kano"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Rivers State"/>
+            <column name="code" value="NG-RI"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Port Harcourt, Rivers State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Oyo State"/>
+            <column name="code" value="NG-OY"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Ibadan, Oyo State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Kaduna State"/>
+            <column name="code" value="NG-KD"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Kaduna, Kaduna State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Abuja Federal Capital Territory"/>
+            <column name="code" value="NG-FC"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Abuja, Federal Capital Territory"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Ogun State"/>
+            <column name="code" value="NG-OG"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Abeokuta, Ogun State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Delta State"/>
+            <column name="code" value="NG-DE"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Asaba, Delta State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Edo State"/>
+            <column name="code" value="NG-ED"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Benin City, Edo State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Anambra State"/>
+            <column name="code" value="NG-AN"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Awka, Anambra State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Enugu State"/>
+            <column name="code" value="NG-EN"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Enugu, Enugu State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Imo State"/>
+            <column name="code" value="NG-IM"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Owerri, Imo State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Abia State"/>
+            <column name="code" value="NG-AB"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Umuahia, Abia State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Akwa Ibom State"/>
+            <column name="code" value="NG-AK"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Uyo, Akwa Ibom State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Bauchi State"/>
+            <column name="code" value="NG-BA"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Bauchi, Bauchi State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Benue State"/>
+            <column name="code" value="NG-BE"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Makurdi, Benue State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Borno State"/>
+            <column name="code" value="NG-BO"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Maiduguri, Borno State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Cross River State"/>
+            <column name="code" value="NG-CR"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Calabar, Cross River State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Ebonyi State"/>
+            <column name="code" value="NG-EB"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Abakaliki, Ebonyi State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Ekiti State"/>
+            <column name="code" value="NG-EK"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Ado-Ekiti, Ekiti State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Gombe State"/>
+            <column name="code" value="NG-GO"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Gombe, Gombe State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Jigawa State"/>
+            <column name="code" value="NG-JI"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Dutse, Jigawa State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Kebbi State"/>
+            <column name="code" value="NG-KE"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Birnin Kebbi, Kebbi State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Kogi State"/>
+            <column name="code" value="NG-KO"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Lokoja, Kogi State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Kwara State"/>
+            <column name="code" value="NG-KW"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Ilorin, Kwara State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Nasarawa State"/>
+            <column name="code" value="NG-NA"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Lafia, Nasarawa State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Niger State"/>
+            <column name="code" value="NG-NI"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Minna, Niger State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Ondo State"/>
+            <column name="code" value="NG-ON"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Akure, Ondo State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Osun State"/>
+            <column name="code" value="NG-OS"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Osogbo, Osun State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Plateau State"/>
+            <column name="code" value="NG-PL"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Jos, Plateau State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Sokoto State"/>
+            <column name="code" value="NG-SO"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Sokoto, Sokoto State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Taraba State"/>
+            <column name="code" value="NG-TA"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Jalingo, Taraba State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Yobe State"/>
+            <column name="code" value="NG-YO"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Damaturu, Yobe State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Zamfara State"/>
+            <column name="code" value="NG-ZA"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Gusau, Zamfara State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Adamawa State"/>
+            <column name="code" value="NG-AD"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Yola, Adamawa State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="organisation">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="name" value="Bayelsa State"/>
+            <column name="code" value="NG-BY"/>
+            <column name="organisation_type" value="STATE"/>
+            <column name="address" value="Yenagoa, Bayelsa State"/>
+            <column name="created_at" valueDate="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueDate="CURRENT_TIMESTAMP"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
