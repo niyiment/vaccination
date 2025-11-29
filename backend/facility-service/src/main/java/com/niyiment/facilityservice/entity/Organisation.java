@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "organisations", indexes = {
+@Table(name = "organisation", indexes = {
         @Index(name = "idx_organisation_parent", columnList = "parent_id"),
         @Index(name = "idx_organisation_code", columnList = "code"),
-        @Index(name = "idx_organisation_type", columnList = "type"),
+        @Index(name = "idx_organisation_type", columnList = "organisation_type"),
 })
 @Getter
 @Setter

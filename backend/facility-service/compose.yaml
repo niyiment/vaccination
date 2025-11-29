@@ -3,7 +3,14 @@ services:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=facility_db'
-      - 'POSTGRES_PASSWORD=facility_user'
-      - 'POSTGRES_USER=facility_pass'
+      - 'POSTGRES_PASSWORD=facility_pass'
+      - 'POSTGRES_USER=facility_user'
     ports:
-      - '5432'
+      - '5432:5432'
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U facility_user -d facility_db"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
