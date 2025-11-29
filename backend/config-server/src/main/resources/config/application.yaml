@@ -31,11 +31,9 @@ management:
       percentiles-histogram:
         http.server.requests: true
 
-# Logging
-logging:
-  level:
-    root: INFO
-    com.healthcare.immunization: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
