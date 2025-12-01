@@ -1,15 +1,36 @@
+
 spring:
   application:
     name: facility-service
-  liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.xml
-    enabled: true
 
   config:
     import: "optional:configserver:http://localhost:8888"
 
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
 
-# Eureka client
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+
 
 eureka:
   client:

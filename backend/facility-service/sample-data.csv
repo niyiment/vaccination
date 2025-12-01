@@ -1,0 +1,10 @@
+name,code,parent_code,organisation_type,address
+Lagos State,NG-LA,,STATE,"Alausa, Ikeja, Lagos"
+Ikeja LGA,NG-LA-IKE,NG-LA,LGA,"Ikeja, Lagos"
+Lagos Island LGA,NG-LA-ISL,NG-LA,LGA,"Lagos Island, Lagos"
+LASUTH,FAC-LA-LASUTH,NG-LA-IKE,FACILITY,"Ikeja, Lagos State"
+Ikeja Primary Health Centre,FAC-LA-IKPHC,NG-LA-IKE,FACILITY,"Ikeja GRA, Lagos"
+Lagos Island General Hospital,FAC-LA-LIGHC,NG-LA-ISL,FACILITY,"Marina, Lagos Island"
+Kano State,NG-KN,,STATE,"Kano State Government House, Kano"
+Kano Municipal LGA,NG-KN-MUN,NG-KN,LGA,"Kano Municipal, Kano"
+Murtala Muhammad Specialist Hospital,FAC-KN-MMSH,NG-KN-MUN,FACILITY,"Kano Municipal, Kano"

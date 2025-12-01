@@ -4,6 +4,7 @@ server:
     context-path: /api/v1
 
 spring:
+
   datasource:
     url: jdbc:postgresql://localhost:5432/facility_db
     username: facility_user
@@ -16,6 +17,14 @@ spring:
       idle-timeout: 600000
       max-lifetime: 1800000
 
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
   cache:
     type: caffeine
     caffeine:
@@ -25,18 +34,5 @@ spring:
       - states
       - lgas
       - facilities
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,prometheus
-  endpoint:
-    health:
-      show-details: always
-  prometheus:
-    metrics:
-      export:
-        enabled: true
 
 
