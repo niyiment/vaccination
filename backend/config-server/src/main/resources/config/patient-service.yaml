@@ -1,0 +1,79 @@
+
+server:
+  port: 8083
+  servlet:
+    context-path: /api/v1
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  tomcat:
+    connection-timeout: 10s
+    keep-alive-timeout: 30s
+    max-keep-alive-requests: 100
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/patient_db}
+    username: ${DB_USERNAME:patient_user}
+    password: ${DB_PASSWORD:patient_pass}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: ${DB_MIN_IDLE:5}
+      maximum-pool-size: ${DB_MAX_POOL_SIZE:20}
+      idle-timeout: ${DB_IDLE_TIMEOUT:300000}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT:30000}
+      max-lifetime: ${DB_MAX_LIFETIME:1800000}
+      connection-test-query: SELECT 1
+      validation-timeout: 5000
+      leak-detection-threshold: ${DB_LEAK_DETECTION_THRESHOLD:60000}
+      pool-name: PatientServiceHikariPool
+
+  jpa:
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:validate}
+    show-sql: ${SHOW_SQL:false}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: ${FORMAT_SQL:true}
+        use_sql_comments: ${USE_SQL_COMMENTS:true}
+        jdbc:
+          batch_size: ${BATCH_SIZE:20}
+          fetch_size: ${FETCH_SIZE:50}
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+        generate_statistics: ${GENERATE_STATS:false}
+      open-in-view: false
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: ${KAFKA_VALUE_SERIALIZER:org.springframework.kafka.support.serializer.JsonSerializer}
+      properties:
+        spring.json.type.mapping: ${KAFKA_TYPE_MAPPING:}
+        spring.json.add.type.headers: true
+      retries: 3
+      acks: all
+    consumer:
+      group-id: ${spring.application.name}-group
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.type.mapping: ${KAFKA_TYPE_MAPPING:}
+
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=10m
+
+  cloud:
+    config:
+      enabled: false
+      uri: http://localhost:8888
+      fail-fast: false
