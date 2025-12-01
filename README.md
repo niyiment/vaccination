@@ -1,5 +1,5 @@
-# 💉 Vaccination Management System 
-The Vaccination Management System is a scalable microservices-based platform designed to support digital immunization workflows,
+# 💉 Immunization Management System 
+The Immunization Management System is a scalable microservices-based platform designed to support digital immunization workflows,
 including beneficiary registration, vaccination events, facility management, reporting, and data synchronization.
 
 ## Key Features
