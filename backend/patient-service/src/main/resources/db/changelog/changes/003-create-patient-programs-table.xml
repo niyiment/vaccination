@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="003-create-patient-programs-table" author="ade">
+        <createTable tableName="patient_programs">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="patient_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="program_code" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="program_name" type="VARCHAR(200)"/>
+            <column name="status" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enrolled_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="completed_at" type="TIMESTAMP"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="patient_programs"
+                baseColumnNames="patient_id"
+                constraintName="fk_program_patient"
+                referencedTableName="patients"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <createIndex tableName="patient_programs" indexName="idx_program_patient">
+            <column name="patient_id"/>
+        </createIndex>
+
+        <createIndex tableName="patient_programs" indexName="idx_program_code">
+            <column name="program_code"/>
+        </createIndex>
+
+        <addUniqueConstraint
+                tableName="patient_programs"
+                columnNames="patient_id, program_code"
+                constraintName="uk_patient_program"/>
+    </changeSet>
+
+</databaseChangeLog>
